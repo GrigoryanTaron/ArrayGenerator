@@ -7,6 +7,7 @@ namespace ArrayGenerator
         static void Main(string[] args)
         {
             Console.WriteLine("1D matrix");
+            Console.WriteLine("Please enter lenght of 1D Array");
             int lenght = 0;
             lenght = Convert.ToInt32(Console.ReadLine());
             int[] arr = ArrCreate(lenght, 10, 999);
