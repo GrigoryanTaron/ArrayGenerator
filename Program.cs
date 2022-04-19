@@ -7,7 +7,9 @@ namespace ArrayGenerator
         static void Main(string[] args)
         {
             Console.WriteLine("1D matrix");
-            int[] arr = ArrCreate(5, 10, 999);
+            int lenght = 0;
+            lenght = Convert.ToInt32(Console.ReadLine());
+            int[] arr = ArrCreate(lenght, 10, 999);
             PrintArr(arr);
             int max = GetMax(arr);
             Console.WriteLine($"\nmax is {max}");
@@ -330,5 +332,5 @@ namespace ArrayGenerator
 
 }
 
-    
+
 
