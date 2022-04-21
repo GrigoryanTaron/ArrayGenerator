@@ -65,11 +65,14 @@ namespace ArrayGenerator
         /// <param name="arr">1D array</param>
         public void PrintArr(int[] arr)
         {
+            Console.WriteLine("Start of 1D Array");
             for (int i = 0; i < arr.Length; i++)
             {
                 Console.Write($"{arr[i]}    ");
             }
+            
             Console.WriteLine();
+            Console.WriteLine("End of 1D Array");
         }
         /// <summary>
         /// Print Any 2D Array
@@ -77,6 +80,7 @@ namespace ArrayGenerator
         /// <param name="arr2D">2D array</param>
         public void PrintArr(int[,] arr2D)
         {
+            Console.WriteLine("Start of 2D Array");
             for (int i = 0; i < arr2D.GetLength(0); i++)
             {
                 for (int j = 0; j < arr2D.GetLength(1); j++)
@@ -85,6 +89,7 @@ namespace ArrayGenerator
                 }
                 Console.WriteLine();
             }
+            Console.WriteLine("End of 2D Array");
         }
         #region Arr1D
 
