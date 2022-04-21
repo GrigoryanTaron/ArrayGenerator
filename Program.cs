@@ -16,27 +16,13 @@ namespace ArrayGenerator
             manager.PrintArr(arr2D);
             manager.PrintArr(arr1D);
             manager.PrintArr(arrswaped);
+
         }
 
     }
     public class ArrManager
     {
-        /// <summary>
-        /// Generate  1D Array with given parameters 
-        /// </summary>
-        /// <param name="lenght">Array Lenght</param>
-        /// <param name="min">min value of random gen</param>
-        /// <param name="max">max value of random gen</param>
-        /// <returns>generated Array</returns>
-        public int[] Create(int lenght, int min, int max)
-        {
-            int[] arr = new int[lenght];
-            for (int i = 0; i < arr.Length; i++)
-            {
-                arr[i] = new Random().Next(min, max);
-            }
-            return arr;
-        }
+      
 
         /// <summary>
         /// Generate 2D Array with given parameters
@@ -58,21 +44,7 @@ namespace ArrayGenerator
             }
             return arr2D;
         }
-        /// <summary>
-        /// Print Any 1D Array
-        /// </summary>
-        /// <param name="arr">1D array</param>
-        public void PrintArr(int[] arr)
-        {
-            Console.WriteLine("Start of 1D Array");
-            for (int i = 0; i < arr.Length; i++)
-            {
-                Console.Write($"{arr[i]}    ");
-            }
-            
-            Console.WriteLine();
-            Console.WriteLine("End of 1D Array");
-        }
+  
         /// <summary>
         /// Print Any 2D Array
         /// </summary>
@@ -91,6 +63,37 @@ namespace ArrayGenerator
             Console.WriteLine("End of 2D Array");
         }
         #region Arr1D
+        /// <summary>
+        /// Print Any 1D Array
+        /// </summary>
+        /// <param name="arr">1D array</param>
+        public void PrintArr(int[] arr)
+        {
+            Console.WriteLine("Start of 1D Array");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write($"{arr[i]}    ");
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("End of 1D Array");
+        }
+        /// <summary>
+        /// Generate  1D Array with given parameters 
+        /// </summary>
+        /// <param name="lenght">Array Lenght</param>
+        /// <param name="min">min value of random gen</param>
+        /// <param name="max">max value of random gen</param>
+        /// <returns>generated Array</returns>
+        public int[] Create(int lenght, int min, int max)
+        {
+            int[] arr = new int[lenght];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = new Random().Next(min, max);
+            }
+            return arr;
+        }
 
         /// <summary>
         /// Get Maximum value of any 1D Array
