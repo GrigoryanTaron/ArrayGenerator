@@ -22,10 +22,6 @@ namespace ArrayGenerator
     }
     public class ArrManager
     {
-      
-
-      
-    
         #region Arr1D
         /// <summary>
         /// Print Any 1D Array
