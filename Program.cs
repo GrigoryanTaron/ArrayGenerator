@@ -6,30 +6,30 @@ namespace ArrayGenerator
     {
         static void Main(string[] args)
         {
-           
-          ArrManager manager = new ArrManager();
-          int[,] arr2D= manager.Create(10,10,0,99);
 
-          // int[] arr1D=manager.Create(10,0,99);
-           
-           int [,] arrswaped=manager.Swap(manager.Create(10,10,0,99),manager.GetMax(arr2D),manager.GetMin(arr2D),manager.GetMaxIndex1(arr2D),manager.GetMaxIndex2(arr2D),manager.GetMinIndex1(arr2D),manager.GetMinIndex1(arr2D));
-           manager.PrintArr(arr2D);
-         //  manager.PrintArr(arr1D);
+            ArrManager manager = new ArrManager();
+            int[,] arr2D = manager.Create(10, 10, 0, 99);
+
+            int[] arr1D = manager.Create(10, 0, 99);
+
+            int[,] arrswaped = manager.Swap(manager.Create(10, 10, 0, 99), manager.GetMax(arr2D), manager.GetMin(arr2D), manager.GetMaxIndex1(arr2D), manager.GetMaxIndex2(arr2D), manager.GetMinIndex1(arr2D), manager.GetMinIndex1(arr2D));
+            manager.PrintArr(arr2D);
+            manager.PrintArr(arr1D);
             manager.PrintArr(arrswaped);
 
         }
-       
+
     }
-    public class  ArrManager
+    public class ArrManager
     {
-            /// <summary>
+        /// <summary>
         /// Generate  1D Array with given parameters 
         /// </summary>
         /// <param name="lenght">Array Lenght</param>
         /// <param name="min">min value of random gen</param>
         /// <param name="max">max value of random gen</param>
         /// <returns>generated Array</returns>
-        public  int[] Create(int lenght, int min, int max)
+        public int[] Create(int lenght, int min, int max)
         {
             int[] arr = new int[lenght];
             for (int i = 0; i < arr.Length; i++)
@@ -39,7 +39,7 @@ namespace ArrayGenerator
             return arr;
         }
 
-               /// <summary>
+        /// <summary>
         /// Generate 2D Array with given parameters
         /// </summary>
         /// <param name="height">Array Height</param>
@@ -59,11 +59,11 @@ namespace ArrayGenerator
             }
             return arr2D;
         }
-         /// <summary>
+        /// <summary>
         /// Print Any 1D Array
         /// </summary>
         /// <param name="arr">1D array</param>
-        public  void PrintArr(int[] arr)
+        public void PrintArr(int[] arr)
         {
             for (int i = 0; i < arr.Length; i++)
             {
@@ -75,7 +75,7 @@ namespace ArrayGenerator
         /// Print Any 2D Array
         /// </summary>
         /// <param name="arr2D">2D array</param>
-        public  void PrintArr(int[,] arr2D)
+        public void PrintArr(int[,] arr2D)
         {
             for (int i = 0; i < arr2D.GetLength(0); i++)
             {
@@ -87,13 +87,13 @@ namespace ArrayGenerator
             }
         }
         #region Arr1D
-    
+
         /// <summary>
         /// Get Maximum value of any 1D Array
         /// </summary>
         /// <param name="arr">1D Array</param>
         /// <returns>max value</returns>
-        public  int GetMax(int[] arr)
+        public int GetMax(int[] arr)
         {
             int max = arr[0];
             for (int i = 0; i < arr.Length; i++)
@@ -108,7 +108,7 @@ namespace ArrayGenerator
         /// </summary>
         /// <param name="arr">1D Array</param>
         /// <returns>min value</returns>
-        public  int GetMin(int[] arr)
+        public int GetMin(int[] arr)
         {
             int min = arr[0];
             for (int i = 0; i < arr.Length; i++)
@@ -123,7 +123,7 @@ namespace ArrayGenerator
         /// </summary>
         /// <param name="arr">1D Array</param>
         /// <returns>Max Index</returns>
-        public  int GetMaxIndex(int[] arr)
+        public int GetMaxIndex(int[] arr)
         {
             int maxidx = 0;
             for (int i = 0; i < arr.Length; i++)
@@ -138,7 +138,7 @@ namespace ArrayGenerator
         /// </summary>
         /// <param name="arr">1D Array</param>
         /// <returns>Min Index </returns>
-        public  int GetMinIndex(int[] arr)
+        public int GetMinIndex(int[] arr)
         {
             int minidx = 0;
             for (int i = 0; i < arr.Length; i++)
@@ -157,7 +157,7 @@ namespace ArrayGenerator
         /// <param name="maxidx">max index of Array</param>
         /// <param name="minidx">min index of Array</param>
         /// <returns>Swaped Array</returns>
-        public  int[] Swap(int[] arr, int max, int min, int maxidx, int minidx)
+        public int[] Swap(int[] arr, int max, int min, int maxidx, int minidx)
         {
             arr[maxidx] = min;
             arr[minidx] = max;
@@ -165,13 +165,13 @@ namespace ArrayGenerator
         }
         #endregion
         #region Arr2D
- 
+
         /// <summary>
         /// Get Maximum value of any 2D Array
         /// </summary>
         /// <param name="arr2D">2D Array</param>
         /// <returns>Maximum value of 2DArray</returns>
-        public  int GetMax(int[,] arr2D)
+        public int GetMax(int[,] arr2D)
         {
             int max2D = arr2D[0, 0];
             for (int i = 0; i < arr2D.GetLength(0); i++)
@@ -209,7 +209,7 @@ namespace ArrayGenerator
         /// </summary>
         /// <param name="arr2D">2D Array</param>
         /// <returns>First Maximum index of any 2D Array</returns>
-        public  int GetMaxIndex1(int[,] arr2D)
+        public int GetMaxIndex1(int[,] arr2D)
         {
             int maxind1 = 0;
             int maxind2 = 0;
@@ -231,7 +231,7 @@ namespace ArrayGenerator
         /// </summary>
         /// <param name="arr2D">2D Array</param>
         /// <returns>Second Maximum index of any 2D Array</returns>
-        public  int GetMaxIndex2(int[,] arr2D)
+        public int GetMaxIndex2(int[,] arr2D)
         {
             int maxind1 = 0;
             int maxind2 = 0;
@@ -275,7 +275,7 @@ namespace ArrayGenerator
         /// </summary>
         /// <param name="arr2D">2D Array</param>
         /// <returns>Second Minimum index of any 2D Array</returns>
-        public  int GetMinIndex2(int[,] arr2D)
+        public int GetMinIndex2(int[,] arr2D)
         {
             int minind1 = 0;
             int minind2 = 0;
@@ -303,7 +303,7 @@ namespace ArrayGenerator
         /// <param name="minind1">Min First index</param>
         /// <param name="minind2">Min Second Index</param>
         /// <returns>Swaped 2D Array</returns>
-        public  int[,] Swap(int[,] arr2D, int max2D, int min2D, int maxind1, int maxind2, int minind1, int minind2)
+        public int[,] Swap(int[,] arr2D, int max2D, int min2D, int maxind1, int maxind2, int minind1, int minind2)
         {
             arr2D[minind1, minind2] = max2D;
             arr2D[maxind1, maxind2] = min2D;
@@ -311,39 +311,39 @@ namespace ArrayGenerator
             return arr2D;
         }
         #endregion
-       //  Console.WriteLine("1D matrix");
+        //  Console.WriteLine("1D matrix");
         //    Console.WriteLine("Please enter lenght of 1D Array");
-         //   int lenght = 0;
-         //   lenght = Convert.ToInt32(Console.ReadLine());
-         //   int[] arr = ArrCreate(lenght, 10, 999);
-         //   PrintArr(arr);
-         //   int max = GetMax(arr);
-         //   Console.WriteLine($"\nmax is {max}");
-         //   int min = GetMin(arr);
-         //   Console.WriteLine($"\nmin is {min}");
-         //   int maxidx = GetMaxIndex(arr);
-         //   Console.WriteLine($"\nmaxindex is {maxidx}");
-         //   int minidx = GetMinIndex(arr);
-         //   Console.WriteLine($"\nminindex is {minidx}");
-          //  int[] arrswaped = Swap(arr, max, min, maxidx, minidx);
-          //  PrintArr(arrswaped);
-           // Console.WriteLine("2D matrix");
-           // int[,] arr2D = ArrCreate(5, 5, 10, 99);
-          //  PrintArr(arr2D);
-         //   int max2D = GetMax(arr2D);
-         //   Console.WriteLine($"\nmax2D is {max2D}");
-         //   int maxind1 = GetMaxIndex1(arr2D);
-         //   Console.WriteLine($"\nmax2Dindex1 is {maxind1}");
-         //   int maxind2 = GetMaxIndex2(arr2D);
-         //   Console.WriteLine($"\nmax2Dindex2 is {maxind2}");
-         //   int min2D = GetMin(arr2D);
-         //   Console.WriteLine($"\nmin2D is {min2D}");
-         //   int minind1 = GetMinIndex1(arr2D);
-         //   Console.WriteLine($"\nmin2Dindex1 is {minind1}");
-         //   int minind2 = GetMinIndex2(arr2D);
-         //   Console.WriteLine($"\nmin2Dindex2 is {minind2}");
-         //   int[,] arr2DSwaped = Swap(arr2D, max2D, min2D, maxind1, maxind2, minind1, minind2);
-         //   PrintArr(arr2DSwaped);
+        //   int lenght = 0;
+        //   lenght = Convert.ToInt32(Console.ReadLine());
+        //   int[] arr = ArrCreate(lenght, 10, 999);
+        //   PrintArr(arr);
+        //   int max = GetMax(arr);
+        //   Console.WriteLine($"\nmax is {max}");
+        //   int min = GetMin(arr);
+        //   Console.WriteLine($"\nmin is {min}");
+        //   int maxidx = GetMaxIndex(arr);
+        //   Console.WriteLine($"\nmaxindex is {maxidx}");
+        //   int minidx = GetMinIndex(arr);
+        //   Console.WriteLine($"\nminindex is {minidx}");
+        //  int[] arrswaped = Swap(arr, max, min, maxidx, minidx);
+        //  PrintArr(arrswaped);
+        // Console.WriteLine("2D matrix");
+        // int[,] arr2D = ArrCreate(5, 5, 10, 99);
+        //  PrintArr(arr2D);
+        //   int max2D = GetMax(arr2D);
+        //   Console.WriteLine($"\nmax2D is {max2D}");
+        //   int maxind1 = GetMaxIndex1(arr2D);
+        //   Console.WriteLine($"\nmax2Dindex1 is {maxind1}");
+        //   int maxind2 = GetMaxIndex2(arr2D);
+        //   Console.WriteLine($"\nmax2Dindex2 is {maxind2}");
+        //   int min2D = GetMin(arr2D);
+        //   Console.WriteLine($"\nmin2D is {min2D}");
+        //   int minind1 = GetMinIndex1(arr2D);
+        //   Console.WriteLine($"\nmin2Dindex1 is {minind1}");
+        //   int minind2 = GetMinIndex2(arr2D);
+        //   Console.WriteLine($"\nmin2Dindex2 is {minind2}");
+        //   int[,] arr2DSwaped = Swap(arr2D, max2D, min2D, maxind1, maxind2, minind1, minind2);
+        //   PrintArr(arr2DSwaped);
 
     }
 
