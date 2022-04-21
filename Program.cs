@@ -24,44 +24,8 @@ namespace ArrayGenerator
     {
       
 
-        /// <summary>
-        /// Generate 2D Array with given parameters
-        /// </summary>
-        /// <param name="height">Array Height</param>
-        /// <param name="width">Array Width</param>
-        /// <param name="min">min value of random gen</param>
-        /// <param name="max">max value of random gen</param>
-        /// <returns>generated 2D Array</returns>
-        public int[,] Create(int height, int width, int min, int max)
-        {
-            int[,] arr2D = new int[height, width];
-            for (int i = 0; i < height; i++)
-            {
-                for (int j = 0; j < width; j++)
-                {
-                    arr2D[(int)i, j] = new Random().Next(min, max);
-                }
-            }
-            return arr2D;
-        }
-  
-        /// <summary>
-        /// Print Any 2D Array
-        /// </summary>
-        /// <param name="arr2D">2D array</param>
-        public void PrintArr(int[,] arr2D)
-        {
-            Console.WriteLine("Start of 2D Array");
-            for (int i = 0; i < arr2D.GetLength(0); i++)
-            {
-                for (int j = 0; j < arr2D.GetLength(1); j++)
-                {
-                    Console.Write($"{arr2D[i, j] }   ");
-                }
-                Console.WriteLine();
-            }
-            Console.WriteLine("End of 2D Array");
-        }
+      
+    
         #region Arr1D
         /// <summary>
         /// Print Any 1D Array
@@ -172,6 +136,44 @@ namespace ArrayGenerator
         }
         #endregion
         #region Arr2D
+
+        /// <summary>
+        /// Print Any 2D Array
+        /// </summary>
+        /// <param name="arr2D">2D array</param>
+        public void PrintArr(int[,] arr2D)
+        {
+            Console.WriteLine("Start of 2D Array");
+            for (int i = 0; i < arr2D.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr2D.GetLength(1); j++)
+                {
+                    Console.Write($"{arr2D[i, j] }   ");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("End of 2D Array");
+        }
+        /// <summary>
+        /// Generate 2D Array with given parameters
+        /// </summary>
+        /// <param name="height">Array Height</param>
+        /// <param name="width">Array Width</param>
+        /// <param name="min">min value of random gen</param>
+        /// <param name="max">max value of random gen</param>
+        /// <returns>generated 2D Array</returns>
+        public int[,] Create(int height, int width, int min, int max)
+        {
+            int[,] arr2D = new int[height, width];
+            for (int i = 0; i < height; i++)
+            {
+                for (int j = 0; j < width; j++)
+                {
+                    arr2D[(int)i, j] = new Random().Next(min, max);
+                }
+            }
+            return arr2D;
+        }
 
         /// <summary>
         /// Get Maximum value of any 2D Array
