@@ -12,11 +12,10 @@ namespace ArrayGenerator
 
             int[] arr1D = manager.Create(10, 0, 99);
 
-            int[,] arrswaped = manager.Swap(manager.Create(10, 10, 0, 99), manager.GetMax(arr2D), manager.GetMin(arr2D), manager.GetMaxIndex1(arr2D), manager.GetMaxIndex2(arr2D), manager.GetMinIndex1(arr2D), manager.GetMinIndex1(arr2D));
+            int[,] arrswaped = manager.Swap(arr2D, manager.GetMax(arr2D), manager.GetMin(arr2D), manager.GetMaxIndex1(arr2D), manager.GetMaxIndex2(arr2D), manager.GetMinIndex1(arr2D), manager.GetMinIndex1(arr2D));
             manager.PrintArr(arr2D);
             manager.PrintArr(arr1D);
             manager.PrintArr(arrswaped);
-
         }
 
     }
@@ -70,7 +69,7 @@ namespace ArrayGenerator
             {
                 Console.Write($"{arr[i]}    ");
             }
-            
+
             Console.WriteLine();
             Console.WriteLine("End of 1D Array");
         }
@@ -353,6 +352,3 @@ namespace ArrayGenerator
     }
 
 }
-
-
-
