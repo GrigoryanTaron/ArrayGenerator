@@ -8,13 +8,13 @@ namespace ArrayGenerator
         {
 
             ArrManager manager = new ArrManager();
-            int[,] arr2D = manager.Create(10, 10, 0, 99);
-
-            int[] arr1D = manager.Create(10, 0, 99);
-
-            int[,] arrswaped = manager.Swap(arr2D, manager.GetMax(arr2D), manager.GetMin(arr2D), manager.GetMaxIndex1(arr2D), manager.GetMaxIndex2(arr2D), manager.GetMinIndex1(arr2D), manager.GetMinIndex1(arr2D));
+            int[,] arr2D = manager.Create(5, 5, 0, 99);
             manager.PrintArr(arr2D);
+            int[] arr1D = manager.Create(10, 0, 99);
             manager.PrintArr(arr1D);
+            int[] swaped1D =manager.Swap(arr1D, manager.GetMax(arr1D), manager.GetMin(arr1D), manager.GetMaxIndex(arr1D), manager.GetMinIndex(arr1D));
+            manager.PrintArr(swaped1D);
+            int[,] arrswaped = manager.Swap(arr2D, manager.GetMax(arr2D), manager.GetMin(arr2D), manager.GetMaxIndex1(arr2D), manager.GetMaxIndex2(arr2D), manager.GetMinIndex1(arr2D), manager.GetMinIndex2(arr2D));
             manager.PrintArr(arrswaped);
 
         }
@@ -32,7 +32,7 @@ namespace ArrayGenerator
             Console.WriteLine("Start of 1D Array");
             for (int i = 0; i < arr.Length; i++)
             {
-                Console.Write($"{arr[i]}    ");
+                Console.Write($"{arr[i]}\t");
             }
 
             Console.WriteLine();
@@ -144,7 +144,7 @@ namespace ArrayGenerator
             {
                 for (int j = 0; j < arr2D.GetLength(1); j++)
                 {
-                    Console.Write($"{arr2D[i, j] }   ");
+                    Console.Write($"{arr2D[i, j] }\t");
                 }
                 Console.WriteLine();
             }
@@ -316,39 +316,7 @@ namespace ArrayGenerator
             return arr2D;
         }
         #endregion
-        //  Console.WriteLine("1D matrix");
-        //    Console.WriteLine("Please enter lenght of 1D Array");
-        //   int lenght = 0;
-        //   lenght = Convert.ToInt32(Console.ReadLine());
-        //   int[] arr = ArrCreate(lenght, 10, 999);
-        //   PrintArr(arr);
-        //   int max = GetMax(arr);
-        //   Console.WriteLine($"\nmax is {max}");
-        //   int min = GetMin(arr);
-        //   Console.WriteLine($"\nmin is {min}");
-        //   int maxidx = GetMaxIndex(arr);
-        //   Console.WriteLine($"\nmaxindex is {maxidx}");
-        //   int minidx = GetMinIndex(arr);
-        //   Console.WriteLine($"\nminindex is {minidx}");
-        //  int[] arrswaped = Swap(arr, max, min, maxidx, minidx);
-        //  PrintArr(arrswaped);
-        // Console.WriteLine("2D matrix");
-        // int[,] arr2D = ArrCreate(5, 5, 10, 99);
-        //  PrintArr(arr2D);
-        //   int max2D = GetMax(arr2D);
-        //   Console.WriteLine($"\nmax2D is {max2D}");
-        //   int maxind1 = GetMaxIndex1(arr2D);
-        //   Console.WriteLine($"\nmax2Dindex1 is {maxind1}");
-        //   int maxind2 = GetMaxIndex2(arr2D);
-        //   Console.WriteLine($"\nmax2Dindex2 is {maxind2}");
-        //   int min2D = GetMin(arr2D);
-        //   Console.WriteLine($"\nmin2D is {min2D}");
-        //   int minind1 = GetMinIndex1(arr2D);
-        //   Console.WriteLine($"\nmin2Dindex1 is {minind1}");
-        //   int minind2 = GetMinIndex2(arr2D);
-        //   Console.WriteLine($"\nmin2Dindex2 is {minind2}");
-        //   int[,] arr2DSwaped = Swap(arr2D, max2D, min2D, maxind1, maxind2, minind1, minind2);
-        //   PrintArr(arr2DSwaped);
+       
 
     }
 
