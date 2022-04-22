@@ -8,12 +8,14 @@ namespace ArrayGenerator
         {
 
             ArrManager manager = new ArrManager();
-            int[,] arr2D = manager.Create(5, 5, 0, 99);
-            manager.PrintArr(arr2D);
-            int[] arr1D = manager.Create(10, 0, 99);
+            Console.WriteLine("Please enter number");
+            int lenght=Convert.ToInt32(Console.ReadLine());
+            int[,] arr2D = manager.Create(lenght, lenght, -99, 999);
+            int[] arr1D = manager.Create(lenght, 0, 99);
             manager.PrintArr(arr1D);
-            int[] swaped1D =manager.Swap(arr1D, manager.GetMax(arr1D), manager.GetMin(arr1D), manager.GetMaxIndex(arr1D), manager.GetMinIndex(arr1D));
+            int[] swaped1D = manager.Swap(arr1D, manager.GetMax(arr1D), manager.GetMin(arr1D), manager.GetMaxIndex(arr1D), manager.GetMinIndex(arr1D));
             manager.PrintArr(swaped1D);
+            manager.PrintArr(arr2D);
             int[,] arrswaped = manager.Swap(arr2D, manager.GetMax(arr2D), manager.GetMin(arr2D), manager.GetMaxIndex1(arr2D), manager.GetMaxIndex2(arr2D), manager.GetMinIndex1(arr2D), manager.GetMinIndex2(arr2D));
             manager.PrintArr(arrswaped);
 
