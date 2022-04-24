@@ -7,7 +7,7 @@ namespace ArrayGenerator
         static void Main(string[] args)
         {
             ArrManager manager = new ArrManager();
-            ArrManagerParameters parameters = new ArrManagerParameters();
+            ArrParameters parameters = new ArrParameters();
             string arrtype = parameters.Type();
             int lenght = parameters.Lenght(arrtype);
             int width = parameters.Width(arrtype);
@@ -42,7 +42,7 @@ namespace ArrayGenerator
         }
 
     }
-    public class ArrManagerParameters
+    public class ArrParameters
     {
         public string Type()
         {
