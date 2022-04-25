@@ -7,9 +7,11 @@ namespace ArrayGenerator
         static void Main(string[] args)
         {
             ArrManager manager = new ArrManager();
-            ArrManagerParameters parameters = new ArrManagerParameters();
+            ArrParameters parameters = new ArrParameters();
+
             string arrtype = parameters.Type();
             int lenght = parameters.Lenght(arrtype);
+            int height = parameters.Height(arrtype);
             int width = parameters.Width(arrtype);
 
             switch (arrtype)
@@ -21,7 +23,7 @@ namespace ArrayGenerator
                     manager.PrintArr(swaped1D);
                     break;
                 case "2D":
-                    int[,] arr2D = manager.Create(lenght, width, -99, 999);
+                    int[,] arr2D = manager.Create(height, width, -99, 999);
                     manager.PrintArr(arr2D);
                     int[,] arrswaped = manager.Swap(arr2D, manager.GetMax(arr2D), manager.GetMin(arr2D), manager.GetMaxIndex1(arr2D), manager.GetMaxIndex2(arr2D), manager.GetMinIndex1(arr2D), manager.GetMinIndex2(arr2D));
                     manager.PrintArr(arrswaped);
@@ -31,18 +33,17 @@ namespace ArrayGenerator
                     manager.PrintArr(arr1D);
                     swaped1D = manager.Swap(arr1D, manager.GetMax(arr1D), manager.GetMin(arr1D), manager.GetMaxIndex(arr1D), manager.GetMinIndex(arr1D));
                     manager.PrintArr(swaped1D);
-                    arr2D = manager.Create(lenght, width, -99, 999);
+                    arr2D = manager.Create(height, width, -99, 999);
                     manager.PrintArr(arr2D);
                     arrswaped = manager.Swap(arr2D, manager.GetMax(arr2D), manager.GetMin(arr2D), manager.GetMaxIndex1(arr2D), manager.GetMaxIndex2(arr2D), manager.GetMinIndex1(arr2D), manager.GetMinIndex2(arr2D));
                     manager.PrintArr(arrswaped);
                     break;
-
             }
 
         }
 
     }
-    public class ArrManagerParameters
+    public class ArrParameters
     {
         public string Type()
         {
@@ -57,31 +58,15 @@ namespace ArrayGenerator
         public int Lenght(string arrtype)
         {
             int lenght = 0;
-            switch (arrtype)
+            if (arrtype == "1D" || arrtype == "all")
             {
-
-                case "1D":
-
-                    Console.WriteLine("Please enter array lenght");
-                    lenght = Convert.ToInt32(Console.ReadLine());
-                    break;
-
-                case "2D":
-                    Console.WriteLine("Please enter array height");
-                    lenght = Convert.ToInt32(Console.ReadLine());
-                    break;
-                case "all":
-                    Console.WriteLine("Please enter array lenght");
-                    lenght = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("Please enter array height");
-                    lenght = Convert.ToInt32(Console.ReadLine());
-                    break;
-
+                Console.WriteLine("Please enter array lenght");
+                lenght = Convert.ToInt32(Console.ReadLine());
             }
             return lenght;
 
         }
-        public int Width(string arrtype)
+        public int Height(string arrtype)
         {
             int width = 0;
             if (arrtype == "2D" || arrtype == "all")
@@ -90,6 +75,16 @@ namespace ArrayGenerator
                 width = Convert.ToInt32(Console.ReadLine());
             }
             return width;
+        }
+        public int Width(string arrtype)
+        {
+            int height = 0;
+            if (arrtype == "2D" || arrtype == "all")
+            {
+                Console.WriteLine("Please enter array height");
+                height = Convert.ToInt32(Console.ReadLine());
+            }
+            return height;
         }
     }
     public class ArrManager
